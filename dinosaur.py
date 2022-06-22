@@ -1,14 +1,15 @@
 from weapon import Weapon
+from robot import Robot
 
 class Dinosaur:
-    def __init__(self,name, attack_power):
-        self.name = name
-        self.attack_power = attack_power
+    def __init__(self):
+        self.name = "Steve"
+        self.attack_power = 25
         self.health = 50
 
     def attack(self, robot):
-        robot.health -= self.attack_power
-        print(f"explain what happened")
+        robot.self.health -= self.attack_power
+        print(f"Dinosaur Steve has attacked Robot Johnny 5 with a axe")
         
 
     
