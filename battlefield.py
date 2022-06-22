@@ -1,6 +1,7 @@
 
 from dinosaur import Dinosaur
-from robot import Robot 
+from robot import Robot
+import random
 
 class Battlefield:
     def __init__(self):
@@ -9,12 +10,13 @@ class Battlefield:
 
     def run_game(self):
         self.display_welcome()
-        self.battle_phase()
-        self.display_winner()
+        self.team = self.choose_team()
+        self.battle()
         
     def display_welcome(self):
-        print("Welcome to grand battle for the times! Only one shall win!")
-    
+        print("\nWelcome to grand battle of Robots vs Dinosaurs!\nOnly one team shall win!\n")
+        print("Each Robot and Dinosaur shall start with 100 health.")
+
     def battle_phase(self):
         self.dinosaur.attack(self.robot)
         if self.dinosaur.health >= 0:
@@ -24,16 +26,24 @@ class Battlefield:
             print(f"Robot is not dead!")
             return self.robot.attack
 
-champion = [Robot, Dinosaur]
-winner_declared = champion
+    def select_team(self):
+        select_team = int(input("Select your team: (1) Robots (2) Dinosaurs"))
+        if select_team == 1:
+            print("You have chosen the fleet of Robots.")
+            return select_team
+        elif select_team == 2:
+            print("You have chose the herd of Dinosaurs.")
+            return select_team
+        else:
+            print("Not a valid option. Try again.")
+            self.select_team()
 
-def display_winner(self):
-        self.battle_phase()
-        if self.robot == 0:
-            print(f"Dinosaur is the winner!")
-            return winner_declared
-        elif self.dinosaur == 0:
-            print(f"Robot is the winner!")
-            return winner_declared
-
-#print(f"Explain what happen in the battle and who won.")
+    def battle(self):
+        first_round = random.randint(1,2)
+        if first_round == 1:
+            print("Robots go first!")
+            first_round == 1
+        if first_round == 2:
+            print("Dinosaurs go first.")
+            first_round = 2
+        
