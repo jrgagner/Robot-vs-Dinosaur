@@ -1,9 +1,30 @@
 class Robot:
-    def __init__(self): 
-        self.name = "Johnny 5"
-        self.attack_power = 25
-        self.health = 50 
+    def __init__(self, name, Weapon): 
+        self.name = name
+        self.health = 100 
+        self.attack_power = 150
+        self.weapon = Weapon
+        self.weapon_of_choice = ["Axe", "M4", "RPG"]
 
-    def attack(self, dinosaur):
-        dinosaur.health -= self.attack_power
-        print(f"explain what happened")
+    def attack_dinosaur(self, dinosaur_to_attack):
+        if self.attack_power > 10:
+            while True:
+                try:
+                    attack_choice = int(input(f"Choose attack weapon: (1) {self.weapon_choice[0]}, (2) {self.weapon_of_choice[1]}, or (3) {self.weapon_choice[2]}"))
+                except ValueError:
+                    continue
+                if attack_choice == 1:
+                    print(f"{self.name} attacked {dinosaur_to_attack.type} with {self.weapon_choice[0]}")
+                    break
+                elif attack_choice == 2:
+                    print(f"{self.name} attacked {dinosaur_to_attack.type} with {self.weapon_choice[1]}")
+                    break
+                elif attack_choice == 3:
+                    print(f"{self.name} attacked {dinosaur_to_attack.type} with {self.weapon_choice[2]}")
+                    break
+
+        self.power_level -= 10
+        dinosaur_to_attack.health -= self.weapon.attack_power
+        print(f"{self.name} attack power is nnow {self.power_level}")
+        print(f"{dinosaur_to_attack.type} health is now {dinosaur_to_attack.health}")
+
