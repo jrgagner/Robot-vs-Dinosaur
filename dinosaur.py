@@ -9,7 +9,7 @@ class Dinosaur:
 
     def attack(self, robot):
         robot.self.health -= self.attack_power
-        print(f"Dinosaur Steve has attacked Robot Johnny 5 with a axe")
+        print("Dinosaur Steve has attacked Robot Johnny 5 with a axe")
         
 
     

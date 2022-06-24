@@ -20,10 +20,10 @@ class Battlefield:
     def battle_phase(self):
         self.dinosaur.attack(self.robot)
         if self.dinosaur.health >= 0:
-            print(f"Dinosaur is not dead!")
-            return self.dinosaur.attack    
+            print("Dinosaur is not dead!")
+            return self.dinosaur.attack
         elif self.robot.health >= 0:
-            print(f"Robot is not dead!")
+            print("Robot is not dead!")
             return self.robot.attack
 
     def select_team(self):
